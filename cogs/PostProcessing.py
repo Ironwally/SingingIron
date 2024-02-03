@@ -1,9 +1,7 @@
-from typing import Optional, Literal
-
 import discord
 from discord.ext import commands
 from discord import app_commands
-import re, os
+import os
 
 
 class PostProcessing(commands.Cog):
@@ -37,8 +35,10 @@ class PostProcessing(commands.Cog):
     async def load(self, interaction: discord.Interaction, cog: str = None):
         if cog:
             # load specified extensions
+            pass
         else:
             # load all new extensions
+            pass
         await interaction.response.send_message("extension post-loading not implemented jet.")
 
 
