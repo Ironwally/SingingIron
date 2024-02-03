@@ -38,7 +38,7 @@ def start():
     intents = discord.Intents.default()
     intents.message_content = True
     bot = IronBot("!", intents)
-    # Extensions already loaded via setup_hook()
+    # Extensions already loaded via setup_hook
 
     print('=== Starting bot ...')
 

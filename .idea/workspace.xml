@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9eed7e40-554b-48d9-9788-fd49e80a42d7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/example_bot.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cogs/errorHandler.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cogs/testCog.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cogs/sync.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/sync.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cogs/testComCog.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/infos.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/infos.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startBot.py" beforeDir="false" afterPath="$PROJECT_DIR$/startBot.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +20,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -27,24 +33,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.main.executor": "Debug",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "dev",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.main.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.startBot.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/Library/software development/own programms/gitHub/Repositories/SingingIronDiscordBot/SingingIronDiscordBot/cogs&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\cogs" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration name="example_bot" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+    <configuration name="startBot" type="PythonConfigurationType" factoryName="Python">
       <module name="SingingIronDiscordBot" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -58,7 +71,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\example_bot.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/startBot.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -86,6 +99,10 @@
       <workItem from="1706298495284" duration="367000" />
       <workItem from="1706301045048" duration="161000" />
       <workItem from="1706313659649" duration="3156000" />
+      <workItem from="1706910616281" duration="119000" />
+      <workItem from="1706914184820" duration="3129000" />
+      <workItem from="1706917337775" duration="674000" />
+      <workItem from="1706918022503" duration="1329000" />
     </task>
     <servers />
   </component>
@@ -93,9 +110,7 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SingingIronDiscordBot$main.coverage" NAME="main Coverage Results" MODIFIED="1706313915225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/SingingIronDiscordBot$main.coverage" NAME="main Coverage Results" MODIFIED="1706298839294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SingingIronDiscordBot$startBot.coverage" NAME="startBot Coverage Results" MODIFIED="1706919292804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
