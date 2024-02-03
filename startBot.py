@@ -29,7 +29,7 @@ async def load_extensions(bot):
                 print(f'\tSuccessfully loaded: {extension}')
             except Exception as ex:
                 exc = f'{type(ex).__name__}: {ex}'
-                print(f'\tFailed loading: {extension}\n\t\t{exc}')
+                print(f'\tFailed to load: {extension}\n\t\t{exc}')
 
 
 def start():
@@ -38,7 +38,6 @@ def start():
     intents = discord.Intents.default()
     intents.message_content = True
     bot = IronBot("!", intents)
-    # Extensions already loaded via setup_hook
 
     print('=== Starting bot ...')
 
@@ -50,6 +49,7 @@ def start():
     # Logging
     logger = settings.logging.getLogger("bot")
     bot.run(settings.DISCORD_API_SECRET, root_logger=True)
+
 
     # Use for more freedom in async loop ... (more async funcs to run...)
     # async with bot:

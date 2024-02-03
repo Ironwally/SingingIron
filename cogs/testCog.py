@@ -10,6 +10,7 @@ class TestCog(commands.Cog):
         self.bot = bot
 
     @app_commands.command(name='check', description='Check/Test the bot')
+    @commands.is_owner()
     async def check(self, interaction: discord.Interaction):
         await interaction.response.send_message("Check successful!")
 

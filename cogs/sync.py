@@ -52,6 +52,11 @@ class SyncCog(commands.Cog):
 
         await ctx.send(f"Synced the tree to {ret}/{len(guilds)}.")
 
+    @sync.error
+    async def sync_error(self, error, interaction: discord.Interaction):
+        if isinstance(error, commands.NotOwner):
+            await interaction.response.send_message("Sorry! This command can currently only be used by the owner.")
+
 
 async def setup(bot):
     await bot.add_cog(SyncCog(bot))
