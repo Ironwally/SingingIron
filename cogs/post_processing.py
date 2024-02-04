@@ -4,7 +4,7 @@ from discord import app_commands
 import os
 
 
-class PostProcessing(commands.Cog):
+class Post_processing(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -20,6 +20,7 @@ class PostProcessing(commands.Cog):
         # Should be safe from code injection because of one-word-only argument. If not, lower code should fix.
         # if ctx.bot.get_cog(cog) is None: raise commands.BadArgument(
         #    "Error. This Cog does not exist or is not loaded.")
+        cog = cog.lower()
         try:
             await self.bot.reload_extension(f'cogs.{cog}')
             await ctx.send(f"Reloaded cog: {cog}")
@@ -28,7 +29,7 @@ class PostProcessing(commands.Cog):
         except commands.BadArgument:
             await ctx.send("Error. Cog name does not exist.")
         except Exception as e:
-            await ctx.send(f"An Exception has occured: {e}")
+            await ctx.send(f'Error: {e}')
 
     @cogs.command(description='List loaded cogs')
     async def list(self, ctx: commands.Context):
@@ -47,4 +48,4 @@ class PostProcessing(commands.Cog):
 
 
 async def setup(bot):
-    await bot.add_cog(PostProcessing(bot))
+    await bot.add_cog(Post_processing(bot))

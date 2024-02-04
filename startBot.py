@@ -37,6 +37,7 @@ def start():
     # Bot Permissions
     intents = discord.Intents.default()
     intents.message_content = True
+    intents.voice_states = True
     bot = IronBot("!", intents)
 
     print('=== Starting bot ...')

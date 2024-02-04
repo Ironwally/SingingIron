@@ -1,4 +1,37 @@
-INFO       - 2024-02-04 03:03:37,960 - client          - discord.client  : logging in using static token
-INFO       - 2024-02-04 03:03:39,246 - gateway         - discord.gateway : Shard ID None has connected to Gateway (Session ID: 224f770dd95c1606e46581edc8eba79b).
-ERROR      - 2024-02-04 03:03:48,867 - bot             - discord.ext.commands.bot : Ignoring exception in command None
-discord.ext.commands.errors.CommandNotFound: Command "test" is not found
+INFO       - 2024-02-04 03:51:34,249 - client          - discord.client  : logging in using static token
+INFO       - 2024-02-04 03:51:35,203 - gateway         - discord.gateway : Shard ID None has connected to Gateway (Session ID: 83dce01b6d51a09d02050c3b4c4715f7).
+ERROR      - 2024-02-04 03:51:43,499 - bot             - discord.ext.commands.bot : Ignoring exception in command join
+Traceback (most recent call last):
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 827, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\cogs\voice_and_sound.py", line 16, in join
+    await voice.channel.connect()  # auto-sets good standard values and joins authors voicechannel
+          ^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'channel'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\hybrid.py", line 438, in _invoke_with_namespace
+    value = await self._do_call(ctx, ctx.kwargs)  # type: ignore
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 846, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'join' raised an exception: AttributeError: 'NoneType' object has no attribute 'channel'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\hybrid.py", line 438, in _invoke_with_namespace
+    value = await self._do_call(ctx, ctx.kwargs)  # type: ignore
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 846, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.ext.commands.errors.HybridCommandError: Hybrid command raised an error: Command 'join' raised an exception: AttributeError: 'NoneType' object has no attribute 'channel'
+INFO       - 2024-02-04 03:52:19,771 - voice_client    - discord.voice_client : Connecting to voice...
+INFO       - 2024-02-04 03:52:19,771 - voice_client    - discord.voice_client : Starting voice handshake... (connection attempt 1)
+INFO       - 2024-02-04 03:52:20,026 - voice_client    - discord.voice_client : Voice handshake complete. Endpoint found frankfurt10043.discord.media
+INFO       - 2024-02-04 03:52:27,819 - voice_client    - discord.voice_client : Disconnected from voice by force... potentially reconnecting.
+INFO       - 2024-02-04 03:52:27,819 - voice_client    - discord.voice_client : Starting voice handshake... (connection attempt 2)
+INFO       - 2024-02-04 03:52:29,803 - voice_client    - discord.voice_client : The voice handshake is being terminated for Channel ID 735557388777685115 (Guild ID 625007302876856413)

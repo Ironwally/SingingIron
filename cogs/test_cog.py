@@ -5,7 +5,7 @@ from discord.ext import commands
 from discord import app_commands
 
 
-class TestCog(commands.Cog):
+class Test_cog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -16,4 +16,4 @@ class TestCog(commands.Cog):
 
 
 async def setup(bot):
-    await bot.add_cog(TestCog(bot))
+    await bot.add_cog(Test_cog(bot))
