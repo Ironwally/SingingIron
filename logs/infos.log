@@ -1,37 +1,738 @@
-INFO       - 2024-02-04 03:51:34,249 - client          - discord.client  : logging in using static token
-INFO       - 2024-02-04 03:51:35,203 - gateway         - discord.gateway : Shard ID None has connected to Gateway (Session ID: 83dce01b6d51a09d02050c3b4c4715f7).
-ERROR      - 2024-02-04 03:51:43,499 - bot             - discord.ext.commands.bot : Ignoring exception in command join
-Traceback (most recent call last):
-  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 827, in _do_call
-    return await self._callback(self.binding, interaction, **params)  # type: ignore
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\cogs\voice_and_sound.py", line 16, in join
-    await voice.channel.connect()  # auto-sets good standard values and joins authors voicechannel
-          ^^^^^^^^^^^^^
-AttributeError: 'NoneType' object has no attribute 'channel'
+INFO       - 2024-02-06 01:11:22,235 - client          - discord.client  : logging in using static token
+INFO       - 2024-02-06 01:11:23,268 - gateway         - discord.gateway : Shard ID None has connected to Gateway (Session ID: 4b91894d95929d2098fa9d38045b70ce).
+WARNING    - 2024-02-06 01:12:14,398 - gateway         - discord.gateway : Shard ID None heartbeat blocked for more than 10 seconds.
+Loop thread traceback (most recent call last):
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 2235, in <module>
+    main()
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 2217, in main
+    globals = debugger.run(setup['file'], None, None, is_module)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1527, in run
+    return self._exec(is_module, entry_point_fn, module_name, file, globals, locals)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1534, in _exec
+    pydev_imports.execfile(file, globals, locals)  # execute the script
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\_pydev_imps\_pydev_execfile.py", line 18, in execfile
+    exec(compile(contents+"\n", file, 'exec'), glob, loc)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\startBot.py", line 62, in <module>
+    start()
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\startBot.py", line 52, in start
+    bot.run(settings.DISCORD_API_SECRET, root_logger=True)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\client.py", line 860, in run
+    asyncio.run(runner())
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 120, in run
+    return loop.run_until_complete(task)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 202, in run_until_complete
+    self._run_once()
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 251, in _run_once
+    handle._run()
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 360, in step
+    step_orig(task, exc)
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 293, in __step
+    self.__step_run_and_handle_result(exc)
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 304, in __step_run_and_handle_result
+    result = coro.send(None)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1089, in wrapper
+    await self._call(interaction)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1248, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\hybrid.py", line 448, in _invoke_with_namespace
+    await command.dispatch_error(ctx, exc.with_traceback(e.__traceback__))
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 639, in dispatch_error
+    await injected(cog, ctx, error)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 217, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\cogs\voice_and_sound.py", line 22, in author_not_in_voice
+    print(f'error: {error.type()}')
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1184, in do_wait_suspend
+    self._do_wait_suspend(thread, frame, event, arg, suspend_type, from_this_thread)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1199, in _do_wait_suspend
+    time.sleep(0.01)
 
-The above exception was the direct cause of the following exception:
+WARNING    - 2024-02-06 01:12:24,415 - gateway         - discord.gateway : Shard ID None heartbeat blocked for more than 20 seconds.
+Loop thread traceback (most recent call last):
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 2235, in <module>
+    main()
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 2217, in main
+    globals = debugger.run(setup['file'], None, None, is_module)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1527, in run
+    return self._exec(is_module, entry_point_fn, module_name, file, globals, locals)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1534, in _exec
+    pydev_imports.execfile(file, globals, locals)  # execute the script
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\_pydev_imps\_pydev_execfile.py", line 18, in execfile
+    exec(compile(contents+"\n", file, 'exec'), glob, loc)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\startBot.py", line 62, in <module>
+    start()
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\startBot.py", line 52, in start
+    bot.run(settings.DISCORD_API_SECRET, root_logger=True)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\client.py", line 860, in run
+    asyncio.run(runner())
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 120, in run
+    return loop.run_until_complete(task)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 202, in run_until_complete
+    self._run_once()
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 251, in _run_once
+    handle._run()
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 360, in step
+    step_orig(task, exc)
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 293, in __step
+    self.__step_run_and_handle_result(exc)
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 304, in __step_run_and_handle_result
+    result = coro.send(None)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1089, in wrapper
+    await self._call(interaction)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1248, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\hybrid.py", line 448, in _invoke_with_namespace
+    await command.dispatch_error(ctx, exc.with_traceback(e.__traceback__))
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 639, in dispatch_error
+    await injected(cog, ctx, error)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 217, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\cogs\voice_and_sound.py", line 22, in author_not_in_voice
+    print(f'error: {error.type()}')
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1184, in do_wait_suspend
+    self._do_wait_suspend(thread, frame, event, arg, suspend_type, from_this_thread)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1199, in _do_wait_suspend
+    time.sleep(0.01)
 
-Traceback (most recent call last):
-  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\hybrid.py", line 438, in _invoke_with_namespace
-    value = await self._do_call(ctx, ctx.kwargs)  # type: ignore
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 846, in _do_call
-    raise CommandInvokeError(self, e) from e
-discord.app_commands.errors.CommandInvokeError: Command 'join' raised an exception: AttributeError: 'NoneType' object has no attribute 'channel'
+WARNING    - 2024-02-06 01:12:34,431 - gateway         - discord.gateway : Shard ID None heartbeat blocked for more than 30 seconds.
+Loop thread traceback (most recent call last):
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 2235, in <module>
+    main()
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 2217, in main
+    globals = debugger.run(setup['file'], None, None, is_module)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1527, in run
+    return self._exec(is_module, entry_point_fn, module_name, file, globals, locals)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1534, in _exec
+    pydev_imports.execfile(file, globals, locals)  # execute the script
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\_pydev_imps\_pydev_execfile.py", line 18, in execfile
+    exec(compile(contents+"\n", file, 'exec'), glob, loc)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\startBot.py", line 62, in <module>
+    start()
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\startBot.py", line 52, in start
+    bot.run(settings.DISCORD_API_SECRET, root_logger=True)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\client.py", line 860, in run
+    asyncio.run(runner())
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 120, in run
+    return loop.run_until_complete(task)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 202, in run_until_complete
+    self._run_once()
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 251, in _run_once
+    handle._run()
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 360, in step
+    step_orig(task, exc)
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 293, in __step
+    self.__step_run_and_handle_result(exc)
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 304, in __step_run_and_handle_result
+    result = coro.send(None)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1089, in wrapper
+    await self._call(interaction)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1248, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\hybrid.py", line 448, in _invoke_with_namespace
+    await command.dispatch_error(ctx, exc.with_traceback(e.__traceback__))
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 639, in dispatch_error
+    await injected(cog, ctx, error)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 217, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\cogs\voice_and_sound.py", line 22, in author_not_in_voice
+    print(f'error: {error.type()}')
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1184, in do_wait_suspend
+    self._do_wait_suspend(thread, frame, event, arg, suspend_type, from_this_thread)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1199, in _do_wait_suspend
+    time.sleep(0.01)
 
-The above exception was the direct cause of the following exception:
+WARNING    - 2024-02-06 01:12:44,438 - gateway         - discord.gateway : Shard ID None heartbeat blocked for more than 40 seconds.
+Loop thread traceback (most recent call last):
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 2235, in <module>
+    main()
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 2217, in main
+    globals = debugger.run(setup['file'], None, None, is_module)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1527, in run
+    return self._exec(is_module, entry_point_fn, module_name, file, globals, locals)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1534, in _exec
+    pydev_imports.execfile(file, globals, locals)  # execute the script
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\_pydev_imps\_pydev_execfile.py", line 18, in execfile
+    exec(compile(contents+"\n", file, 'exec'), glob, loc)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\startBot.py", line 62, in <module>
+    start()
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\startBot.py", line 52, in start
+    bot.run(settings.DISCORD_API_SECRET, root_logger=True)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\client.py", line 860, in run
+    asyncio.run(runner())
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 120, in run
+    return loop.run_until_complete(task)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 202, in run_until_complete
+    self._run_once()
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 251, in _run_once
+    handle._run()
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 360, in step
+    step_orig(task, exc)
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 293, in __step
+    self.__step_run_and_handle_result(exc)
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 304, in __step_run_and_handle_result
+    result = coro.send(None)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1089, in wrapper
+    await self._call(interaction)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1248, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\hybrid.py", line 448, in _invoke_with_namespace
+    await command.dispatch_error(ctx, exc.with_traceback(e.__traceback__))
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 639, in dispatch_error
+    await injected(cog, ctx, error)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 217, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\cogs\voice_and_sound.py", line 22, in author_not_in_voice
+    print(f'error: {error.type()}')
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1184, in do_wait_suspend
+    self._do_wait_suspend(thread, frame, event, arg, suspend_type, from_this_thread)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1199, in _do_wait_suspend
+    time.sleep(0.01)
 
-Traceback (most recent call last):
-  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\hybrid.py", line 438, in _invoke_with_namespace
-    value = await self._do_call(ctx, ctx.kwargs)  # type: ignore
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 846, in _do_call
-    raise CommandInvokeError(self, e) from e
-discord.ext.commands.errors.HybridCommandError: Hybrid command raised an error: Command 'join' raised an exception: AttributeError: 'NoneType' object has no attribute 'channel'
-INFO       - 2024-02-04 03:52:19,771 - voice_client    - discord.voice_client : Connecting to voice...
-INFO       - 2024-02-04 03:52:19,771 - voice_client    - discord.voice_client : Starting voice handshake... (connection attempt 1)
-INFO       - 2024-02-04 03:52:20,026 - voice_client    - discord.voice_client : Voice handshake complete. Endpoint found frankfurt10043.discord.media
-INFO       - 2024-02-04 03:52:27,819 - voice_client    - discord.voice_client : Disconnected from voice by force... potentially reconnecting.
-INFO       - 2024-02-04 03:52:27,819 - voice_client    - discord.voice_client : Starting voice handshake... (connection attempt 2)
-INFO       - 2024-02-04 03:52:29,803 - voice_client    - discord.voice_client : The voice handshake is being terminated for Channel ID 735557388777685115 (Guild ID 625007302876856413)
+WARNING    - 2024-02-06 01:12:54,452 - gateway         - discord.gateway : Shard ID None heartbeat blocked for more than 50 seconds.
+Loop thread traceback (most recent call last):
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 2235, in <module>
+    main()
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 2217, in main
+    globals = debugger.run(setup['file'], None, None, is_module)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1527, in run
+    return self._exec(is_module, entry_point_fn, module_name, file, globals, locals)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1534, in _exec
+    pydev_imports.execfile(file, globals, locals)  # execute the script
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\_pydev_imps\_pydev_execfile.py", line 18, in execfile
+    exec(compile(contents+"\n", file, 'exec'), glob, loc)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\startBot.py", line 62, in <module>
+    start()
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\startBot.py", line 52, in start
+    bot.run(settings.DISCORD_API_SECRET, root_logger=True)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\client.py", line 860, in run
+    asyncio.run(runner())
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 120, in run
+    return loop.run_until_complete(task)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 202, in run_until_complete
+    self._run_once()
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 251, in _run_once
+    handle._run()
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 360, in step
+    step_orig(task, exc)
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 293, in __step
+    self.__step_run_and_handle_result(exc)
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 304, in __step_run_and_handle_result
+    result = coro.send(None)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1089, in wrapper
+    await self._call(interaction)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1248, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\hybrid.py", line 448, in _invoke_with_namespace
+    await command.dispatch_error(ctx, exc.with_traceback(e.__traceback__))
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 639, in dispatch_error
+    await injected(cog, ctx, error)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 217, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\cogs\voice_and_sound.py", line 22, in author_not_in_voice
+    print(f'error: {error.type()}')
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1184, in do_wait_suspend
+    self._do_wait_suspend(thread, frame, event, arg, suspend_type, from_this_thread)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1199, in _do_wait_suspend
+    time.sleep(0.01)
+
+WARNING    - 2024-02-06 01:13:04,455 - gateway         - discord.gateway : Shard ID None heartbeat blocked for more than 60 seconds.
+Loop thread traceback (most recent call last):
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 2235, in <module>
+    main()
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 2217, in main
+    globals = debugger.run(setup['file'], None, None, is_module)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1527, in run
+    return self._exec(is_module, entry_point_fn, module_name, file, globals, locals)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1534, in _exec
+    pydev_imports.execfile(file, globals, locals)  # execute the script
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\_pydev_imps\_pydev_execfile.py", line 18, in execfile
+    exec(compile(contents+"\n", file, 'exec'), glob, loc)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\startBot.py", line 62, in <module>
+    start()
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\startBot.py", line 52, in start
+    bot.run(settings.DISCORD_API_SECRET, root_logger=True)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\client.py", line 860, in run
+    asyncio.run(runner())
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 120, in run
+    return loop.run_until_complete(task)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 202, in run_until_complete
+    self._run_once()
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 251, in _run_once
+    handle._run()
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 360, in step
+    step_orig(task, exc)
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 293, in __step
+    self.__step_run_and_handle_result(exc)
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 304, in __step_run_and_handle_result
+    result = coro.send(None)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1089, in wrapper
+    await self._call(interaction)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1248, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\hybrid.py", line 448, in _invoke_with_namespace
+    await command.dispatch_error(ctx, exc.with_traceback(e.__traceback__))
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 639, in dispatch_error
+    await injected(cog, ctx, error)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 217, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\cogs\voice_and_sound.py", line 22, in author_not_in_voice
+    print(f'error: {error.type()}')
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1184, in do_wait_suspend
+    self._do_wait_suspend(thread, frame, event, arg, suspend_type, from_this_thread)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1199, in _do_wait_suspend
+    time.sleep(0.01)
+
+WARNING    - 2024-02-06 01:13:14,463 - gateway         - discord.gateway : Shard ID None heartbeat blocked for more than 70 seconds.
+Loop thread traceback (most recent call last):
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 2235, in <module>
+    main()
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 2217, in main
+    globals = debugger.run(setup['file'], None, None, is_module)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1527, in run
+    return self._exec(is_module, entry_point_fn, module_name, file, globals, locals)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1534, in _exec
+    pydev_imports.execfile(file, globals, locals)  # execute the script
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\_pydev_imps\_pydev_execfile.py", line 18, in execfile
+    exec(compile(contents+"\n", file, 'exec'), glob, loc)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\startBot.py", line 62, in <module>
+    start()
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\startBot.py", line 52, in start
+    bot.run(settings.DISCORD_API_SECRET, root_logger=True)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\client.py", line 860, in run
+    asyncio.run(runner())
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 120, in run
+    return loop.run_until_complete(task)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 202, in run_until_complete
+    self._run_once()
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 251, in _run_once
+    handle._run()
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 360, in step
+    step_orig(task, exc)
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 293, in __step
+    self.__step_run_and_handle_result(exc)
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 304, in __step_run_and_handle_result
+    result = coro.send(None)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1089, in wrapper
+    await self._call(interaction)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1248, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\hybrid.py", line 448, in _invoke_with_namespace
+    await command.dispatch_error(ctx, exc.with_traceback(e.__traceback__))
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 639, in dispatch_error
+    await injected(cog, ctx, error)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 217, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\cogs\voice_and_sound.py", line 22, in author_not_in_voice
+    print(f'error: {error.type()}')
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1184, in do_wait_suspend
+    self._do_wait_suspend(thread, frame, event, arg, suspend_type, from_this_thread)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1199, in _do_wait_suspend
+    time.sleep(0.01)
+
+WARNING    - 2024-02-06 01:13:24,480 - gateway         - discord.gateway : Shard ID None heartbeat blocked for more than 80 seconds.
+Loop thread traceback (most recent call last):
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 2235, in <module>
+    main()
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 2217, in main
+    globals = debugger.run(setup['file'], None, None, is_module)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1527, in run
+    return self._exec(is_module, entry_point_fn, module_name, file, globals, locals)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1534, in _exec
+    pydev_imports.execfile(file, globals, locals)  # execute the script
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\_pydev_imps\_pydev_execfile.py", line 18, in execfile
+    exec(compile(contents+"\n", file, 'exec'), glob, loc)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\startBot.py", line 62, in <module>
+    start()
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\startBot.py", line 52, in start
+    bot.run(settings.DISCORD_API_SECRET, root_logger=True)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\client.py", line 860, in run
+    asyncio.run(runner())
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 120, in run
+    return loop.run_until_complete(task)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 202, in run_until_complete
+    self._run_once()
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 251, in _run_once
+    handle._run()
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 360, in step
+    step_orig(task, exc)
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 293, in __step
+    self.__step_run_and_handle_result(exc)
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 304, in __step_run_and_handle_result
+    result = coro.send(None)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1089, in wrapper
+    await self._call(interaction)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1248, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\hybrid.py", line 448, in _invoke_with_namespace
+    await command.dispatch_error(ctx, exc.with_traceback(e.__traceback__))
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 639, in dispatch_error
+    await injected(cog, ctx, error)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 217, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\cogs\voice_and_sound.py", line 22, in author_not_in_voice
+    print(f'error: {error.type()}')
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1184, in do_wait_suspend
+    self._do_wait_suspend(thread, frame, event, arg, suspend_type, from_this_thread)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1199, in _do_wait_suspend
+    time.sleep(0.01)
+
+WARNING    - 2024-02-06 01:13:34,483 - gateway         - discord.gateway : Shard ID None heartbeat blocked for more than 90 seconds.
+Loop thread traceback (most recent call last):
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 2235, in <module>
+    main()
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 2217, in main
+    globals = debugger.run(setup['file'], None, None, is_module)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1527, in run
+    return self._exec(is_module, entry_point_fn, module_name, file, globals, locals)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1534, in _exec
+    pydev_imports.execfile(file, globals, locals)  # execute the script
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\_pydev_imps\_pydev_execfile.py", line 18, in execfile
+    exec(compile(contents+"\n", file, 'exec'), glob, loc)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\startBot.py", line 62, in <module>
+    start()
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\startBot.py", line 52, in start
+    bot.run(settings.DISCORD_API_SECRET, root_logger=True)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\client.py", line 860, in run
+    asyncio.run(runner())
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 120, in run
+    return loop.run_until_complete(task)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 202, in run_until_complete
+    self._run_once()
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 251, in _run_once
+    handle._run()
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 360, in step
+    step_orig(task, exc)
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 293, in __step
+    self.__step_run_and_handle_result(exc)
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 304, in __step_run_and_handle_result
+    result = coro.send(None)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1089, in wrapper
+    await self._call(interaction)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1248, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\hybrid.py", line 448, in _invoke_with_namespace
+    await command.dispatch_error(ctx, exc.with_traceback(e.__traceback__))
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 639, in dispatch_error
+    await injected(cog, ctx, error)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 217, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\cogs\voice_and_sound.py", line 22, in author_not_in_voice
+    print(f'error: {error.type()}')
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1184, in do_wait_suspend
+    self._do_wait_suspend(thread, frame, event, arg, suspend_type, from_this_thread)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1199, in _do_wait_suspend
+    time.sleep(0.01)
+
+WARNING    - 2024-02-06 01:13:44,488 - gateway         - discord.gateway : Shard ID None heartbeat blocked for more than 100 seconds.
+Loop thread traceback (most recent call last):
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 2235, in <module>
+    main()
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 2217, in main
+    globals = debugger.run(setup['file'], None, None, is_module)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1527, in run
+    return self._exec(is_module, entry_point_fn, module_name, file, globals, locals)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1534, in _exec
+    pydev_imports.execfile(file, globals, locals)  # execute the script
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\_pydev_imps\_pydev_execfile.py", line 18, in execfile
+    exec(compile(contents+"\n", file, 'exec'), glob, loc)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\startBot.py", line 62, in <module>
+    start()
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\startBot.py", line 52, in start
+    bot.run(settings.DISCORD_API_SECRET, root_logger=True)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\client.py", line 860, in run
+    asyncio.run(runner())
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 120, in run
+    return loop.run_until_complete(task)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 202, in run_until_complete
+    self._run_once()
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 251, in _run_once
+    handle._run()
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 360, in step
+    step_orig(task, exc)
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 293, in __step
+    self.__step_run_and_handle_result(exc)
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 304, in __step_run_and_handle_result
+    result = coro.send(None)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1089, in wrapper
+    await self._call(interaction)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1248, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\hybrid.py", line 448, in _invoke_with_namespace
+    await command.dispatch_error(ctx, exc.with_traceback(e.__traceback__))
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 639, in dispatch_error
+    await injected(cog, ctx, error)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 217, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\cogs\voice_and_sound.py", line 22, in author_not_in_voice
+    print(f'error: {error.type()}')
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1184, in do_wait_suspend
+    self._do_wait_suspend(thread, frame, event, arg, suspend_type, from_this_thread)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1199, in _do_wait_suspend
+    time.sleep(0.01)
+
+WARNING    - 2024-02-06 01:13:54,503 - gateway         - discord.gateway : Shard ID None heartbeat blocked for more than 110 seconds.
+Loop thread traceback (most recent call last):
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 2235, in <module>
+    main()
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 2217, in main
+    globals = debugger.run(setup['file'], None, None, is_module)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1527, in run
+    return self._exec(is_module, entry_point_fn, module_name, file, globals, locals)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1534, in _exec
+    pydev_imports.execfile(file, globals, locals)  # execute the script
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\_pydev_imps\_pydev_execfile.py", line 18, in execfile
+    exec(compile(contents+"\n", file, 'exec'), glob, loc)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\startBot.py", line 62, in <module>
+    start()
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\startBot.py", line 52, in start
+    bot.run(settings.DISCORD_API_SECRET, root_logger=True)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\client.py", line 860, in run
+    asyncio.run(runner())
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 120, in run
+    return loop.run_until_complete(task)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 202, in run_until_complete
+    self._run_once()
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 251, in _run_once
+    handle._run()
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 360, in step
+    step_orig(task, exc)
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 293, in __step
+    self.__step_run_and_handle_result(exc)
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 304, in __step_run_and_handle_result
+    result = coro.send(None)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1089, in wrapper
+    await self._call(interaction)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1248, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\hybrid.py", line 448, in _invoke_with_namespace
+    await command.dispatch_error(ctx, exc.with_traceback(e.__traceback__))
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 639, in dispatch_error
+    await injected(cog, ctx, error)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 217, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\cogs\voice_and_sound.py", line 22, in author_not_in_voice
+    print(f'error: {error.type()}')
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1184, in do_wait_suspend
+    self._do_wait_suspend(thread, frame, event, arg, suspend_type, from_this_thread)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1199, in _do_wait_suspend
+    time.sleep(0.01)
+
+WARNING    - 2024-02-06 01:14:04,507 - gateway         - discord.gateway : Shard ID None heartbeat blocked for more than 120 seconds.
+Loop thread traceback (most recent call last):
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 2235, in <module>
+    main()
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 2217, in main
+    globals = debugger.run(setup['file'], None, None, is_module)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1527, in run
+    return self._exec(is_module, entry_point_fn, module_name, file, globals, locals)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1534, in _exec
+    pydev_imports.execfile(file, globals, locals)  # execute the script
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\_pydev_imps\_pydev_execfile.py", line 18, in execfile
+    exec(compile(contents+"\n", file, 'exec'), glob, loc)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\startBot.py", line 62, in <module>
+    start()
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\startBot.py", line 52, in start
+    bot.run(settings.DISCORD_API_SECRET, root_logger=True)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\client.py", line 860, in run
+    asyncio.run(runner())
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 120, in run
+    return loop.run_until_complete(task)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 202, in run_until_complete
+    self._run_once()
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 251, in _run_once
+    handle._run()
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 360, in step
+    step_orig(task, exc)
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 293, in __step
+    self.__step_run_and_handle_result(exc)
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 304, in __step_run_and_handle_result
+    result = coro.send(None)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1089, in wrapper
+    await self._call(interaction)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1248, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\hybrid.py", line 448, in _invoke_with_namespace
+    await command.dispatch_error(ctx, exc.with_traceback(e.__traceback__))
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 639, in dispatch_error
+    await injected(cog, ctx, error)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 217, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\cogs\voice_and_sound.py", line 22, in author_not_in_voice
+    print(f'error: {error.type()}')
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1184, in do_wait_suspend
+    self._do_wait_suspend(thread, frame, event, arg, suspend_type, from_this_thread)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1199, in _do_wait_suspend
+    time.sleep(0.01)
+
+WARNING    - 2024-02-06 01:14:14,513 - gateway         - discord.gateway : Shard ID None heartbeat blocked for more than 130 seconds.
+Loop thread traceback (most recent call last):
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 2235, in <module>
+    main()
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 2217, in main
+    globals = debugger.run(setup['file'], None, None, is_module)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1527, in run
+    return self._exec(is_module, entry_point_fn, module_name, file, globals, locals)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1534, in _exec
+    pydev_imports.execfile(file, globals, locals)  # execute the script
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\_pydev_imps\_pydev_execfile.py", line 18, in execfile
+    exec(compile(contents+"\n", file, 'exec'), glob, loc)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\startBot.py", line 62, in <module>
+    start()
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\startBot.py", line 52, in start
+    bot.run(settings.DISCORD_API_SECRET, root_logger=True)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\client.py", line 860, in run
+    asyncio.run(runner())
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 120, in run
+    return loop.run_until_complete(task)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 202, in run_until_complete
+    self._run_once()
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 251, in _run_once
+    handle._run()
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 360, in step
+    step_orig(task, exc)
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 293, in __step
+    self.__step_run_and_handle_result(exc)
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 304, in __step_run_and_handle_result
+    result = coro.send(None)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1089, in wrapper
+    await self._call(interaction)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1248, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\hybrid.py", line 448, in _invoke_with_namespace
+    await command.dispatch_error(ctx, exc.with_traceback(e.__traceback__))
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 639, in dispatch_error
+    await injected(cog, ctx, error)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 217, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\cogs\voice_and_sound.py", line 22, in author_not_in_voice
+    print(f'error: {error.type()}')
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1184, in do_wait_suspend
+    self._do_wait_suspend(thread, frame, event, arg, suspend_type, from_this_thread)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1199, in _do_wait_suspend
+    time.sleep(0.01)
+
+WARNING    - 2024-02-06 01:14:24,517 - gateway         - discord.gateway : Shard ID None heartbeat blocked for more than 140 seconds.
+Loop thread traceback (most recent call last):
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 2235, in <module>
+    main()
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 2217, in main
+    globals = debugger.run(setup['file'], None, None, is_module)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1527, in run
+    return self._exec(is_module, entry_point_fn, module_name, file, globals, locals)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1534, in _exec
+    pydev_imports.execfile(file, globals, locals)  # execute the script
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\_pydev_imps\_pydev_execfile.py", line 18, in execfile
+    exec(compile(contents+"\n", file, 'exec'), glob, loc)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\startBot.py", line 62, in <module>
+    start()
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\startBot.py", line 52, in start
+    bot.run(settings.DISCORD_API_SECRET, root_logger=True)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\client.py", line 860, in run
+    asyncio.run(runner())
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 120, in run
+    return loop.run_until_complete(task)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 202, in run_until_complete
+    self._run_once()
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 251, in _run_once
+    handle._run()
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 360, in step
+    step_orig(task, exc)
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 293, in __step
+    self.__step_run_and_handle_result(exc)
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 304, in __step_run_and_handle_result
+    result = coro.send(None)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1089, in wrapper
+    await self._call(interaction)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1248, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\hybrid.py", line 448, in _invoke_with_namespace
+    await command.dispatch_error(ctx, exc.with_traceback(e.__traceback__))
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 639, in dispatch_error
+    await injected(cog, ctx, error)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 217, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\cogs\voice_and_sound.py", line 22, in author_not_in_voice
+    print(f'error: {error.type()}')
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1184, in do_wait_suspend
+    self._do_wait_suspend(thread, frame, event, arg, suspend_type, from_this_thread)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1199, in _do_wait_suspend
+    time.sleep(0.01)
+
+WARNING    - 2024-02-06 01:14:34,528 - gateway         - discord.gateway : Shard ID None heartbeat blocked for more than 150 seconds.
+Loop thread traceback (most recent call last):
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 2235, in <module>
+    main()
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 2217, in main
+    globals = debugger.run(setup['file'], None, None, is_module)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1527, in run
+    return self._exec(is_module, entry_point_fn, module_name, file, globals, locals)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1534, in _exec
+    pydev_imports.execfile(file, globals, locals)  # execute the script
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\_pydev_imps\_pydev_execfile.py", line 18, in execfile
+    exec(compile(contents+"\n", file, 'exec'), glob, loc)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\startBot.py", line 62, in <module>
+    start()
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\startBot.py", line 52, in start
+    bot.run(settings.DISCORD_API_SECRET, root_logger=True)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\client.py", line 860, in run
+    asyncio.run(runner())
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 120, in run
+    return loop.run_until_complete(task)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 202, in run_until_complete
+    self._run_once()
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 251, in _run_once
+    handle._run()
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 360, in step
+    step_orig(task, exc)
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 293, in __step
+    self.__step_run_and_handle_result(exc)
+  File "C:\Users\marti\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 304, in __step_run_and_handle_result
+    result = coro.send(None)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1089, in wrapper
+    await self._call(interaction)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1248, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\hybrid.py", line 448, in _invoke_with_namespace
+    await command.dispatch_error(ctx, exc.with_traceback(e.__traceback__))
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 639, in dispatch_error
+    await injected(cog, ctx, error)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 217, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\cogs\voice_and_sound.py", line 22, in author_not_in_voice
+    print(f'error: {error.type()}')
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1184, in do_wait_suspend
+    self._do_wait_suspend(thread, frame, event, arg, suspend_type, from_this_thread)
+  File "F:\programs\JetBrains\Toolbox\PyCharm Professional\plugins\python\helpers\pydev\pydevd.py", line 1199, in _do_wait_suspend
+    time.sleep(0.01)
+
+INFO       - 2024-02-06 01:14:43,044 - gateway         - discord.gateway : Shard ID None session has been invalidated.

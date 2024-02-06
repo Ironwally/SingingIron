@@ -12,16 +12,14 @@ class Voice_and_sound(commands.Cog):
     @commands.hybrid_command(description='join channel')
     async def join(self, ctx: commands.Context):
         voice = ctx.author.voice
-        try:
-            await voice.channel.connect()  # auto-sets good standard values and joins authors voicechannel
-        except commands.CommandInvokeError:
-            await ctx.send('Error joining voice channel. Join a channel first.')
+        await voice.channel.connect()  # auto-sets good standard values and joins authors voicechannel
 
-    #@join.error
-    #async def author_not_in_voice(self, error, ctx: commands.Context):
-    #    print(f'error: {error}')
-    #    if isinstance(error, commands.HybridCommandError):
-    #        await ctx.send(f'Error joining channel: {error}')
+    @join.error
+    async def author_not_in_voice(self, ctx: commands.Context, error):
+        '''When catching the error this way, we only get a general hybrid-command-error with a string like
+        description. And I don't want to go down checking strings...'''
+        if isinstance(error, commands.HybridCommandError):
+            await ctx.send(f'Error joining voice channel. Maybe join a channel first.')
 
 
 async def setup(bot):

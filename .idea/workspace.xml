@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9eed7e40-554b-48d9-9788-fd49e80a42d7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/cogs/voice_and_sound.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cogs/PostProcessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/post_processing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cogs/testCog.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/test_cog.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cogs/voice_and_sound.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/voice_and_sound.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/infos.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/infos.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/startBot.py" beforeDir="false" afterPath="$PROJECT_DIR$/startBot.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +32,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.main.executor": "Debug",
-    "Python.startBot.executor": "Run",
+    "Python.startBot.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "dev",
@@ -103,7 +100,8 @@
       <workItem from="1706917337775" duration="674000" />
       <workItem from="1706918022503" duration="3423000" />
       <workItem from="1706921461763" duration="6714000" />
-      <workItem from="1706997378978" duration="14426000" />
+      <workItem from="1706997378978" duration="14677000" />
+      <workItem from="1707177874003" duration="942000" />
     </task>
     <servers />
   </component>
@@ -112,6 +110,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/SingingIronDiscordBot$main.coverage" NAME="main Coverage Results" MODIFIED="1706298839294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/SingingIronDiscordBot$startBot.coverage" NAME="startBot Coverage Results" MODIFIED="1707014491129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SingingIronDiscordBot$startBot.coverage" NAME="startBot Coverage Results" MODIFIED="1707178280313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
