@@ -7,7 +7,6 @@
     <list default="true" id="9eed7e40-554b-48d9-9788-fd49e80a42d7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cogs/voice_and_sound.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/voice_and_sound.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/infos.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/infos.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +100,7 @@
       <workItem from="1706918022503" duration="3423000" />
       <workItem from="1706921461763" duration="6714000" />
       <workItem from="1706997378978" duration="14677000" />
-      <workItem from="1707177874003" duration="942000" />
+      <workItem from="1707177874003" duration="1688000" />
     </task>
     <servers />
   </component>

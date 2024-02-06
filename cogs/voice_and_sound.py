@@ -16,10 +16,15 @@ class Voice_and_sound(commands.Cog):
 
     @join.error
     async def author_not_in_voice(self, ctx: commands.Context, error):
-        '''When catching the error this way, we only get a general hybrid-command-error with a string like
-        description. And I don't want to go down checking strings...'''
+        """When catching the error this way, we only get a general hybrid-command-error with a string like
+        description. And I don't want to go down checking strings..."""
         if isinstance(error, commands.HybridCommandError):
             await ctx.send(f'Error joining voice channel. Maybe join a channel first.')
+
+    @commands.hybrid_command(description='give me music')
+    async def play(self, ctx: commands.Context):
+        #self.bot.activity = discord.Spotify
+        pass
 
 
 async def setup(bot):
