@@ -18,6 +18,8 @@ class SyncCog(commands.Cog):
                             s/none -> only sync local guild
                             or
                             sync guild-id_1 guild-id_2 ...
+                            
+                            standart: sync c
                         """)
     @commands.guild_only()
     @commands.is_owner()

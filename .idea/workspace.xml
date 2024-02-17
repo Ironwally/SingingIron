@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9eed7e40-554b-48d9-9788-fd49e80a42d7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cogs/post_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/post_processing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cogs/sync.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/sync.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cogs/voice_and_sound.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/voice_and_sound.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/infos.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/startBot.py" beforeDir="false" afterPath="$PROJECT_DIR$/startBot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/logging.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/logging.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +53,11 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\cogs" />
     </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="ls" />
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="startBot" type="PythonConfigurationType" factoryName="Python">
@@ -107,7 +110,9 @@
       <workItem from="1706997378978" duration="14677000" />
       <workItem from="1707177874003" duration="2634000" />
       <workItem from="1708165632103" duration="446000" />
-      <workItem from="1708166110558" duration="3309000" />
+      <workItem from="1708166110558" duration="6321000" />
+      <workItem from="1708179247735" duration="9465000" />
+      <workItem from="1708194834368" duration="17967000" />
     </task>
     <servers />
   </component>
@@ -116,6 +121,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/SingingIronDiscordBot$main.coverage" NAME="main Coverage Results" MODIFIED="1706298839294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/SingingIronDiscordBot$startBot.coverage" NAME="startBot Coverage Results" MODIFIED="1708168980737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SingingIronDiscordBot$startBot.coverage" NAME="startBot Coverage Results" MODIFIED="1708213104608" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
