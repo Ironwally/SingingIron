@@ -1,0 +1,164 @@
+[2024-02-17 12:23:01] [INFO    ] discord.client: logging in using static token
+[2024-02-17 12:23:02] [INFO    ] discord.gateway: Shard ID None has connected to Gateway (Session ID: cf7b5e0f6a7251681cbb4af0be956bd8).
+[2024-02-17 12:23:04] [INFO    ] discord: Bot logged in as SingingIron#8606 (ID: 1200603188345184297)
+[2024-02-17 12:24:25] [ERROR   ] discord.ext.commands.bot: Ignoring exception in command cogs reload
+Traceback (most recent call last):
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\cogs\post_processing.py", line 34, in reload
+    cog = cog.lower()
+          ^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'lower'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 1650, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'NoneType' object has no attribute 'lower'
+[2024-02-17 12:25:22] [ERROR   ] discord.ext.commands.bot: Ignoring exception in command cogs reload
+Traceback (most recent call last):
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\cogs\post_processing.py", line 34, in reload
+    cog = cog.lower()
+          ^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'lower'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 1650, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'NoneType' object has no attribute 'lower'
+[2024-02-17 12:26:56] [ERROR   ] discord.ext.commands.bot: Ignoring exception in command cogs reload
+Traceback (most recent call last):
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\cogs\post_processing.py", line 34, in reload
+    cog = cog.lower()
+          ^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'lower'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 1650, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'NoneType' object has no attribute 'lower'
+[2024-02-17 12:27:02] [ERROR   ] discord.ext.commands.bot: Ignoring exception in command cogs reload
+Traceback (most recent call last):
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\cogs\post_processing.py", line 34, in reload
+    cog = cog.lower()
+          ^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'lower'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 1650, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'NoneType' object has no attribute 'lower'
+[2024-02-17 12:27:15] [ERROR   ] discord.ext.commands.bot: Ignoring exception in command cogs reload
+Traceback (most recent call last):
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\cogs\post_processing.py", line 34, in reload
+    cog = cog.lower()
+          ^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'lower'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 1650, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'NoneType' object has no attribute 'lower'
+[2024-02-17 12:27:19] [ERROR   ] discord.ext.commands.bot: Ignoring exception in command cogs reload
+Traceback (most recent call last):
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\cogs\post_processing.py", line 34, in reload
+    cog = cog.lower()
+          ^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'lower'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 1650, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'NoneType' object has no attribute 'lower'
+[2024-02-17 12:28:13] [ERROR   ] discord.ext.commands.bot: Ignoring exception in command cogs reload
+Traceback (most recent call last):
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\cogs\post_processing.py", line 34, in reload
+    return
+      ^^^^^
+AttributeError: 'NoneType' object has no attribute 'lower'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 1650, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Library\software development\own programms\gitHub\Repositories\SingingIronDiscordBot\SingingIronDiscordBot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'NoneType' object has no attribute 'lower'

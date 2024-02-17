@@ -23,8 +23,9 @@ class Voice_and_sound(commands.Cog):
 
     @commands.hybrid_command(description='give me music')
     async def play(self, ctx: commands.Context):
-        #self.bot.activity = discord.Spotify
-        pass
+        """Start a song in the voice channel"""
+        print('play command started')
+
 
 
 async def setup(bot):

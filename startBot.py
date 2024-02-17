@@ -1,10 +1,9 @@
-# This example requires the 'message_content' intent.
-import os
-
 # Imports
 import settings
 import discord
 import logging
+import logging.handlers
+import os
 from discord.ext import commands
 
 
@@ -48,8 +47,20 @@ def start():
         logger.info(f"Bot logged in as {bot.user} (ID: {bot.user.id})")
 
     # Logging
-    logger = settings.logging.getLogger("bot")
-    bot.run(settings.DISCORD_API_SECRET, root_logger=True)
+    logger = logging.getLogger('discord')
+    logger.setLevel(logging.INFO)
+    handler = logging.FileHandler(filename='logs/logging.log', encoding='utf-8', mode='w')
+    handlerNewer2 = logging.handlers.RotatingFileHandler(
+        filename='logs/logging.log',
+        encoding='utf-8',
+        maxBytes=32 * 1024 * 1024,  # 32 MiB
+        backupCount=5,   # Rotate through 5 files
+    )
+    dt_fmt = '%Y-%m-%d %H:%M:%S'
+    formatter = logging.Formatter('[{asctime}] [{levelname:<8}] {name}: {message}', dt_fmt, style='{')
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
+    bot.run(settings.DISCORD_API_SECRET, log_handler=None)
 
 
     # Use for more freedom in async loop ... (more async funcs to run...)

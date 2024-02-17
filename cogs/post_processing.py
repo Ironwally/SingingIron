@@ -20,6 +20,18 @@ class Post_processing(commands.Cog):
         # Should be safe from code injection because of one-word-only argument. If not, lower code should fix.
         # if ctx.bot.get_cog(cog) is None: raise commands.BadArgument(
         #    "Error. This Cog does not exist or is not loaded.")
+        if cog is None:
+            # just reloads all cogs
+            for filename in os.listdir('./cogs'):
+                if filename.endswith('.py'):
+                    extension = filename[:-3]
+                    try:
+                        await ctx.bot.reload_extension(f'cogs.{extension}')
+                        await ctx.send(f'\tSuccessfully reloaded: {extension}')
+                    except Exception as ex:
+                        exc = f'{type(ex).__name__}: {ex}'
+                        await ctx.send(f'\tError reloading extension: {extension}')
+            return
         cog = cog.lower()
         try:
             await self.bot.reload_extension(f'cogs.{cog}')
