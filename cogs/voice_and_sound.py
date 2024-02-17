@@ -92,6 +92,10 @@ class Voice_and_sound(commands.Cog):
             url = best_format['url']
             source = discord.FFmpegPCMAudio(source=url, **ffmpeg_opts)
             post_processed = discord.PCMVolumeTransformer(source, volume=0.2)
+
+            if voice_client.is_playing():
+                voice_client.stop()
+
             voice_client.play(post_processed)
 
     @commands.hybrid_command(description='stop the music')

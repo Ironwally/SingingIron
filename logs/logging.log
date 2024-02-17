@@ -1,3 +1,6 @@
 [2024-02-18 00:38:25] [INFO    ] discord.client: logging in using static token
 [2024-02-18 00:38:26] [INFO    ] discord.gateway: Shard ID None has connected to Gateway (Session ID: 152dad18e43c4d8c9d86883bdeec8983).
 [2024-02-18 00:38:28] [INFO    ] discord: Bot logged in as SingingIron#8606 (ID: 1200603188345184297)
+[2024-02-18 00:39:06] [INFO    ] discord.voice_client: Connecting to voice...
+[2024-02-18 00:39:06] [INFO    ] discord.voice_client: Starting voice handshake... (connection attempt 1)
+[2024-02-18 00:39:07] [INFO    ] discord.voice_client: Voice handshake complete. Endpoint found frankfurt10080.discord.media

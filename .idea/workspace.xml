@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9eed7e40-554b-48d9-9788-fd49e80a42d7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cogs/sync.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/sync.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cogs/voice_and_sound.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/voice_and_sound.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/logging.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/logging.log" afterDir="false" />
     </list>
@@ -112,7 +110,7 @@
       <workItem from="1708165632103" duration="446000" />
       <workItem from="1708166110558" duration="6321000" />
       <workItem from="1708179247735" duration="9465000" />
-      <workItem from="1708194834368" duration="17967000" />
+      <workItem from="1708194834368" duration="18203000" />
     </task>
     <servers />
   </component>
