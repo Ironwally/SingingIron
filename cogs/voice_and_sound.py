@@ -26,6 +26,7 @@ class Voice_and_sound(commands.Cog):
         else:
             # noinspection PyUnresolvedReferences
             await voice_client.move_to(channel)
+        await ctx.send('Joined voice channel.')
 
     @commands.hybrid_command(description='give me music')
     async def play(self, ctx: commands.Context, *, search):
