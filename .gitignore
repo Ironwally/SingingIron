@@ -1,8 +1,5 @@
 .env
-.venv/
-.venv/*
 .idea/
 .idea/*
 .idea/workspace.xml
-.logs/
 .logs/*
