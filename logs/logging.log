@@ -35,3 +35,17 @@
 [2024-02-18 00:54:11] [INFO    ] discord.voice_client: Voice handshake complete. Endpoint found frankfurt10080.discord.media
 [2024-02-18 00:54:11] [INFO    ] discord.player: ffmpeg process 19388 has not terminated. Waiting to terminate...
 [2024-02-18 00:54:11] [INFO    ] discord.player: ffmpeg process 19388 should have terminated with a return code of 1.
+[2024-02-18 00:55:27] [INFO    ] discord.voice_client: Disconnecting from voice normally, close code 1000.
+[2024-02-18 00:55:27] [INFO    ] discord.voice_client: The voice handshake is being terminated for Channel ID 739198121556312135 (Guild ID 625007302876856413)
+[2024-02-18 00:55:31] [INFO    ] discord.voice_client: Connecting to voice...
+[2024-02-18 00:55:31] [INFO    ] discord.voice_client: Starting voice handshake... (connection attempt 1)
+[2024-02-18 00:55:31] [INFO    ] discord.voice_client: Voice handshake complete. Endpoint found frankfurt10080.discord.media
+[2024-02-18 00:57:06] [INFO    ] discord.voice_client: Disconnecting from voice normally, close code 1000.
+[2024-02-18 00:57:06] [INFO    ] discord.voice_client: The voice handshake is being terminated for Channel ID 739198121556312135 (Guild ID 625007302876856413)
+[2024-02-18 00:57:06] [INFO    ] discord.player: ffmpeg process 1424 has not terminated. Waiting to terminate...
+[2024-02-18 00:57:06] [INFO    ] discord.player: ffmpeg process 1424 should have terminated with a return code of 1.
+[2024-02-18 00:57:15] [INFO    ] discord.voice_client: Connecting to voice...
+[2024-02-18 00:57:15] [INFO    ] discord.voice_client: Starting voice handshake... (connection attempt 1)
+[2024-02-18 00:57:15] [INFO    ] discord.voice_client: Voice handshake complete. Endpoint found frankfurt10080.discord.media
+[2024-02-18 00:57:46] [INFO    ] discord.player: ffmpeg process 13792 has not terminated. Waiting to terminate...
+[2024-02-18 00:57:46] [INFO    ] discord.player: ffmpeg process 13792 should have terminated with a return code of 1.
