@@ -60,7 +60,12 @@ def start():
     formatter = logging.Formatter('[{asctime}] [{levelname:<8}] {name}: {message}', dt_fmt, style='{')
     handler.setFormatter(formatter)
     logger.addHandler(handler)
-    bot.run(settings.DISCORD_API_SECRET, log_handler=None)
+
+    discord_secret = settings.DISCORD_API_SECRET
+    if discord_secret is None:
+        print('enter discord_api_secret: ')
+        discord_secret = input()
+    bot.run(discord_secret, log_handler=None)
 
 
     # Use for more freedom in async loop ... (more async funcs to run...)
