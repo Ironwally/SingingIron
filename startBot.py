@@ -67,7 +67,6 @@ def start():
         discord_secret = input()
     bot.run(discord_secret, log_handler=None)
 
-
     # Use for more freedom in async loop ... (more async funcs to run...)
     # async with bot:
     #    # Setup Logger? I suppose...
