@@ -9,7 +9,7 @@ from discord import app_commands
 import validators
 
 
-class music_shortcuts(commands.Cog):
+class Music_shortcuts(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -44,9 +44,11 @@ class music_shortcuts(commands.Cog):
     async def cantina(self, ctx: commands.Context):
         """The only smooth jazz music you will ever need."""
         await ctx.invoke(ctx.bot.get_command('play'),
-                         search='https://www.youtube.com/watch?v=xA8-6X8aR3o&list=RDQMLUsBAlZt3KE&start_radio=1')
-        await ctx.invoke(ctx.bot.get_command('loop'))
+                         search='https://www.youtube.com/watch?v=xA8-6X8aR3o')
+        # noinspection PyUnresolvedReferences
+        if ctx.bot.get_cog('Voice_and_sound').loop is False:
+            await ctx.invoke(ctx.bot.get_command('loop'))
 
 
 async def setup(bot):
-    await bot.add_cog(music_shortcuts(bot))
+    await bot.add_cog(Music_shortcuts(bot))
