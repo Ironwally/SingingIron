@@ -39,6 +39,14 @@ class music_shortcuts(commands.Cog):
         logging.error(f'Error while executing bass: {error}')
         await ctx.send('An error occured. Please check logger for more info.')
 
+    @commands.hybrid_command(description='the smoothes background music',
+                             aliases=['c','ca','can','cant','canti','cantinaband'])
+    async def cantina(self, ctx: commands.Context):
+        """The only smooth jazz music you will ever need."""
+        await ctx.invoke(ctx.bot.get_command('play'),
+                         search='https://www.youtube.com/watch?v=xA8-6X8aR3o&list=RDQMLUsBAlZt3KE&start_radio=1')
+        await ctx.invoke(ctx.bot.get_command('loop'))
+
 
 async def setup(bot):
     await bot.add_cog(music_shortcuts(bot))

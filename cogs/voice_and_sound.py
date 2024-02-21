@@ -13,22 +13,26 @@ class Voice_and_sound(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.loop = False
+        self.loop_url = None
 
     @commands.hybrid_command(description='join channel')
     async def join(self, ctx: commands.Context):
+
         if ctx.author.voice is None:
             await ctx.send('You need to be in a channel to use this command!')
-            return
+            return False
 
         channel = ctx.author.voice.channel
         # Get or create voice client for guild
         voice_client = discord.utils.get(ctx.bot.voice_clients, guild=ctx.guild)
         if voice_client is None:
-            voice_client = await channel.connect()
+            await channel.connect()
         else:
             # noinspection PyUnresolvedReferences
             await voice_client.move_to(channel)
-        await ctx.send('Joined voice channel.')
+
+        if ctx.invoked_with != 'play_next':
+            await ctx.send('Joined voice channel.')
 
     @join.error
     async def join_error(self, ctx: commands.Context, error):
@@ -50,16 +54,22 @@ class Voice_and_sound(commands.Cog):
 
     async def play_next(self, ctx: commands.Context):
         """Get next song and invoke it"""
+        print('play next invoked')
         if self.loop:
+            ctx.invoked_with = 'loop'
             await ctx.invoke(ctx.bot.get_command('play'), search=ctx.current_argument)
-            # await ctx.invoke(ctx.bot.get_command('play'))
         else:
+            ctx.invoked_with = 'play_next'
             # Invoke next song, when implemented
             pass
 
     @commands.hybrid_command(description='give me music')
     async def play(self, ctx: commands.Context, *, search):
         """Play a song in the voice channel"""
+
+        if search is None:
+            await ctx.send('Please provide a name or url')
+            return
 
         def format_selector(cntx):
             """ Select best audio quality"""
@@ -78,16 +88,6 @@ class Voice_and_sound(commands.Cog):
             formats_no_videos = list(filter(notvideo, formats))
             return formats_no_videos[0]  # We assume that the top is the best choice. (is audio and best, so...)
 
-        if search is None:
-            await ctx.send('Please provide a name or url')
-
-        # Connect to voice channel if not already
-        voice_client = ctx.voice_client
-        if voice_client is None:
-            await ctx.invoke(ctx.bot.get_command('join'))
-            voice_client = discord.utils.get(ctx.bot.voice_clients, guild=ctx.guild)
-        await ctx.send('Fetching...')
-
         ydl_opts = {
             'format': 'm4a/bestaudio/best',  # Preffered format and fallbacks
             # help(yt-dlp.postprocessors) for list of available postprocessors and their arguments
@@ -96,10 +96,25 @@ class Voice_and_sound(commands.Cog):
                 'preferredcodec': 'm4a',
             }]
         }
+        ydl_opts = {'format': 'm4a/bestaudio', }
+        ffmpeg_opts = {'before_options': '-reconnect 1 -reconnect_streamed 1',
+                       'options': '-vn'}
 
-        ydl_opts = {
-            'format': 'm4a/bestaudio',
-        }
+        # If command was invoked, whe catch it here and skip searching. If the command was invoked, we are also
+        # already in a voice channel. if we are not, we got kicked, so don't play the song.
+        if ctx.invoked_with == 'loop':
+            source = discord.FFmpegPCMAudio(source=self.loop_url, **ffmpeg_opts)
+            post_processed = discord.PCMVolumeTransformer(source, volume=0.2)
+            ctx.voice_client.play(post_processed,
+                                  after=lambda e: asyncio.run_coroutine_threadsafe(self.play_next(ctx), ctx.bot.loop))
+            return
+
+        # Connect to voice channel if not already
+        if await ctx.invoke(ctx.bot.get_command('join')) is not None:
+            return
+
+        voice_client = discord.utils.get(ctx.bot.voice_clients, guild=ctx.guild)
+        await ctx.send('Fetching...')
 
         with YoutubeDL(ydl_opts) as ydl:
             # Get Youtube url
@@ -113,11 +128,8 @@ class Voice_and_sound(commands.Cog):
             await ctx.send(f'Playing {video['title']} by {video['channel']}!')
 
             # Play sound from url using ffmpeg
-            ffmpeg_opts = {'before_options': '-reconnect 1 -reconnect_streamed 1',
-                           'options': '-vn'}
-
             best_format = format_selector(video)
-            url = best_format['url']
+            self.loop_url = url = best_format['url']
             source = discord.FFmpegPCMAudio(source=url, **ffmpeg_opts)
             post_processed = discord.PCMVolumeTransformer(source, volume=0.2)
 
@@ -127,7 +139,8 @@ class Voice_and_sound(commands.Cog):
             if voice_client.is_playing():
                 voice_client.stop()
 
-            voice_client.play(post_processed, after=lambda e: asyncio.run_coroutine_threadsafe(self.play_next(ctx), ctx.bot.loop))
+            voice_client.play(post_processed,
+                              after=lambda e: asyncio.run_coroutine_threadsafe(self.play_next(ctx), ctx.bot.loop))
 
             # -> Implement Queue mit/und Database
 
