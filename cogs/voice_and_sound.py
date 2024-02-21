@@ -6,6 +6,7 @@ from yt_dlp import YoutubeDL
 from discord.ext import commands
 from discord import app_commands
 import validators
+import asyncio
 
 
 class Voice_and_sound(commands.Cog):
@@ -47,10 +48,10 @@ class Voice_and_sound(commands.Cog):
         else:
             await ctx.send('Not connected to voice channel.')
 
-    def play_next(self, ctx: commands.Context):
+    async def play_next(self, ctx: commands.Context):
         """Get next song and invoke it"""
         if self.loop:
-            ctx.invoke(ctx.bot.get_command('play'))
+            await ctx.invoke(ctx.bot.get_command('play'))
         else:
             # Invoke next song, when implemented
             pass
@@ -125,7 +126,7 @@ class Voice_and_sound(commands.Cog):
             if voice_client.is_playing():
                 voice_client.stop()
 
-            voice_client.play(post_processed, after=self.play_next(ctx))
+            voice_client.play(post_processed, after=lambda e: asyncio.run_coroutine_threadsafe(self.play_next(ctx), ctx.bot.loop))
 
             # -> Implement Queue mit/und Database
 
