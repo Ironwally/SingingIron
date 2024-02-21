@@ -24,13 +24,18 @@ class music_shortcuts(commands.Cog):
         """When catching the error this way, we only get a general hybrid-command-error with a string like
         description. And I don't want to go down checking strings..."""
         logging.error(f'Error while executing bling: {error}')
-        await ctx.send('An Error occured. Check logger for more info.')
+        await ctx.send('An Error occured. Please check logger for more info.')
         return
 
     @commands.hybrid_command(description='The only song you will ever need.')
     async def bass(self, ctx: commands.Context):
         """The only song you will even need."""
         await ctx.invoke(ctx.bot.get_command('play'), search='https://www.youtube.com/watch?v=dqNNQy395Rs')
+
+    @bass.error
+    async def bass_error(self, ctx: commands.Context, error):
+        logging.error(f'Error while executing bass: {error}')
+        await ctx.send('An error occured. Please check logger for more info.')
 
 
 async def setup(bot):

@@ -34,7 +34,7 @@ class Voice_and_sound(commands.Cog):
         """When catching the error this way, we only get a general hybrid-command-error with a string like
         description. And I don't want to go down checking strings..."""
         logging.error(f'Error while executing join: {error}')
-        await ctx.send('An error occured. Check logger for more info.')
+        await ctx.send('An error occured. Please check logger for more info.')
         return
 
     @commands.hybrid_command(description='give me music')
@@ -118,7 +118,7 @@ class Voice_and_sound(commands.Cog):
             await ctx.send('Missing search_term or url')
         else:
             print(f'Error while executing play: {error}')
-            await ctx.send('An error occured. Check logger for more info.')
+            await ctx.send('An error occured. Please check logger for more info.')
             return
 
     @commands.hybrid_command(description='stop the music')
