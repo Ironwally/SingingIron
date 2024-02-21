@@ -1,4 +1,3 @@
-import json
 import logging
 from typing import Optional, Literal
 
@@ -12,6 +11,7 @@ import validators
 class Voice_and_sound(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        self.loop = False
 
     @commands.hybrid_command(description='join channel')
     async def join(self, ctx: commands.Context):
@@ -37,7 +37,7 @@ class Voice_and_sound(commands.Cog):
         await ctx.send('An error occured. Please check logger for more info.')
         return
 
-    @commands.hybrid_command(description='disconnect bot from voice channel \n short: !dis',
+    @commands.hybrid_command(description='disconnect bot from voice channel \n short: dis',
                              aliases=['dis'])
     async def disconnect(self, ctx: commands.Context, force: Optional[Literal["f"]] = None):
         """Disconnect bot from voice channel"""
@@ -47,23 +47,31 @@ class Voice_and_sound(commands.Cog):
         else:
             await ctx.send('Not connected to voice channel.')
 
+    def play_next(self, ctx: commands.Context):
+        """Get next song and invoke it"""
+        if self.loop:
+            ctx.invoke(ctx.bot.get_command('play'))
+        else:
+            # Invoke next song, when implemented
+            pass
+
     @commands.hybrid_command(description='give me music')
     async def play(self, ctx: commands.Context, *, search):
         """Play a song in the voice channel"""
 
-        def format_selector(ctx):
+        def format_selector(cntx):
             """ Select best audio quality"""
 
             # formats are already sorted worst to best
-            formats = ctx['formats'][::-1]
+            formats = cntx['formats'][::-1]
 
             # find compatible audio extension
             audio_ext = {'mp4': 'm4a', 'webm': 'webm'}
 
             # vcodec='none' means there is no video
             # filter vcodec
-            def notvideo(format):
-                return format['vcodec'] == 'none'
+            def notvideo(vformat):
+                return vformat['vcodec'] == 'none'
 
             formats_no_videos = list(filter(notvideo, formats))
             return formats_no_videos[0]  # We assume that the top is the best choice. (is audio and best, so...)
@@ -117,7 +125,7 @@ class Voice_and_sound(commands.Cog):
             if voice_client.is_playing():
                 voice_client.stop()
 
-            voice_client.play(post_processed)
+            voice_client.play(post_processed, after=self.play_next(ctx))
 
             # -> Implement Queue mit/und Database
 
@@ -140,16 +148,18 @@ class Voice_and_sound(commands.Cog):
         else:
             await ctx.send('No music currently playing.')
 
-    @commands.hybrid_command(description='pause music')
+    @commands.hybrid_command(description='pause music',
+                             aliases=['p'])
     async def pause(self, ctx: commands.Context):
         """Pause music"""
-        if not ctx.voice_client.is_playing():
+        if ctx.voice_client and ctx.voice_client.is_playing():
             ctx.voice_client.pause()
             await ctx.send('Music paused.')
         else:
             await ctx.send('No music currently playing.')
 
-    @commands.hybrid_command(description='resume paused music')
+    @commands.hybrid_command(description='resume paused music',
+                             aliases=['re'])
     async def resume(self, ctx: commands.Context):
         """Resume music"""
         if ctx.voice_client and ctx.voice_client.is_paused():
@@ -158,13 +168,18 @@ class Voice_and_sound(commands.Cog):
         else:
             await ctx.send('Music is not paused')
 
-    @commands.hybrid_command(description='Loop the playing song')
+    @commands.hybrid_command(description='Loop the playing song',
+                             aliases=['l'])
     async def loop(self, ctx: commands.Context):
         """Loop the playing song"""
-        pass
-        ctx.send('Not implemented yet')
-
-        # Implement via looping in current song in database.
+        if self.loop:
+            self.loop = False
+            await ctx.send('Song looping deactivated.')
+        else:
+            self.loop = True
+            await ctx.send('Looping current song.')
+        # Looping implemented via play_next function bool
+        # Implement via looping in current song in database?
 
 
 async def setup(bot):

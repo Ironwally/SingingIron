@@ -14,7 +14,8 @@ class music_shortcuts(commands.Cog):
         self.bot = bot
 
     @commands.hybrid_command(description='I like creampuffs now... Nom Nom Nom'
-                                         '\nbling bang bang bong')
+                                         '\nbling bang bang bong',
+                             aliases=['b'])
     async def bling(self, ctx: commands.Context):
         """I like creampuffs now... Nom Nom Nom \n bling bang bang bong"""
         await ctx.invoke(ctx.bot.get_command('play'), search='https://www.youtube.com/watch?v=210R0ozmLwg')
@@ -27,7 +28,8 @@ class music_shortcuts(commands.Cog):
         await ctx.send('An Error occured. Please check logger for more info.')
         return
 
-    @commands.hybrid_command(description='The only song you will ever need.')
+    @commands.hybrid_command(description='The only song you will ever need.',
+                             aliases=['bs'])
     async def bass(self, ctx: commands.Context):
         """The only song you will even need."""
         await ctx.invoke(ctx.bot.get_command('play'), search='https://www.youtube.com/watch?v=dqNNQy395Rs')
