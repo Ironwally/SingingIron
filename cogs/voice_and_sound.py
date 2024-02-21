@@ -1,4 +1,5 @@
 import json
+import logging
 from typing import Optional, Literal
 
 import discord
@@ -28,6 +29,14 @@ class Voice_and_sound(commands.Cog):
             await voice_client.move_to(channel)
         await ctx.send('Joined voice channel.')
 
+    @join.error
+    async def join_error(self, ctx: commands.Context, error):
+        """When catching the error this way, we only get a general hybrid-command-error with a string like
+        description. And I don't want to go down checking strings..."""
+        logging.error(f'Error while executing join: {error}')
+        await ctx.send('An error occured. Check logger for more info.')
+        return
+
     @commands.hybrid_command(description='give me music')
     async def play(self, ctx: commands.Context, *, search):
         """Play a song in the voice channel"""
@@ -55,9 +64,7 @@ class Voice_and_sound(commands.Cog):
         # Connect to voice channel if not already
         voice_client = ctx.voice_client
         if voice_client is None:
-            ictx = ctx
-            ictx.command = ctx.bot.get_command('join')
-            await ctx.bot.invoke(ictx)
+            await ctx.invoke(ctx.bot.get_command('join'))
             voice_client = discord.utils.get(ctx.bot.voice_clients, guild=ctx.guild)
         await ctx.send('Fetching...')
 
@@ -104,6 +111,16 @@ class Voice_and_sound(commands.Cog):
 
             # -> Implement Queue mit/und Database
 
+    @play.error
+    async def play_error(self, ctx: commands.Context, error):
+        logging.error(f'Error while executing play: {error}')
+        if isinstance(error, commands.MissingRequiredArgument):
+            await ctx.send('Missing search_term or url')
+        else:
+            print(f'Error while executing play: {error}')
+            await ctx.send('An error occured. Check logger for more info.')
+            return
+
     @commands.hybrid_command(description='stop the music')
     async def stop(self, ctx: commands.Context):
         """Stop music"""
@@ -140,19 +157,6 @@ class Voice_and_sound(commands.Cog):
             await ctx.voice_client.disconnect(force=force)
         else:
             await ctx.send('Not connected to voice channel.')
-
-    @play.error
-    async def no_search_term_error(self, ctx: commands.Context, error):
-        if isinstance(error, commands.MissingRequiredArgument):
-            await ctx.send('Missing search_term or url')
-            return
-
-    @join.error
-    async def voice_join_error(self, ctx: commands.Context, error):
-        """When catching the error this way, we only get a general hybrid-command-error with a string like
-        description. And I don't want to go down checking strings..."""
-        await ctx.send(error)
-        return
 
 
 async def setup(bot):
