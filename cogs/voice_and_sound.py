@@ -51,7 +51,8 @@ class Voice_and_sound(commands.Cog):
     async def play_next(self, ctx: commands.Context):
         """Get next song and invoke it"""
         if self.loop:
-            await ctx.invoke(ctx.bot.get_command('play'))
+            await ctx.invoke(ctx.bot.get_command('play'), search=ctx.current_argument)
+            # await ctx.invoke(ctx.bot.get_command('play'))
         else:
             # Invoke next song, when implemented
             pass
