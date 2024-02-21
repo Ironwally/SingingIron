@@ -37,6 +37,16 @@ class Voice_and_sound(commands.Cog):
         await ctx.send('An error occured. Please check logger for more info.')
         return
 
+    @commands.hybrid_command(description='disconnect bot from voice channel \n short: !dis',
+                             aliases=['dis'])
+    async def disconnect(self, ctx: commands.Context, force: Optional[Literal["f"]] = None):
+        """Disconnect bot from voice channel"""
+        force = True if force is not None else False
+        if ctx.voice_client and ctx.voice_client.is_connected():
+            await ctx.voice_client.disconnect(force=force)
+        else:
+            await ctx.send('Not connected to voice channel.')
+
     @commands.hybrid_command(description='give me music')
     async def play(self, ctx: commands.Context, *, search):
         """Play a song in the voice channel"""
@@ -146,17 +156,13 @@ class Voice_and_sound(commands.Cog):
             ctx.voice_client.resume()
             await ctx.send('Music resumed.')
         else:
-            await ctx.send('No music paused.')
+            await ctx.send('Music is not paused')
 
-    @commands.hybrid_command(description='disconnect bot from voice channel \n short: !dis',
-                             aliases=['dis'])
-    async def disconnect(self, ctx: commands.Context, force: Optional[Literal["f"]] = None):
-        """Disconnect bot from voice channel"""
-        force = True if force is not None else False
-        if ctx.voice_client and ctx.voice_client.is_connected():
-            await ctx.voice_client.disconnect(force=force)
-        else:
-            await ctx.send('Not connected to voice channel.')
+    @commands.hybrid_command(description='Loop the playing song')
+    async def loop(self, ctx: commands.Context):
+        """Loop the playing song"""
+        pass
+        ctx.send('Not implemented yet')
 
 
 async def setup(bot):
