@@ -164,6 +164,8 @@ class Voice_and_sound(commands.Cog):
         pass
         ctx.send('Not implemented yet')
 
+        # Implement via looping in current song in database.
+
 
 async def setup(bot):
     await bot.add_cog(Voice_and_sound(bot))
