@@ -27,11 +27,10 @@ class Voice_and_sound(commands.Cog):
         voice_client = discord.utils.get(ctx.bot.voice_clients, guild=ctx.guild)
         if voice_client is None:
             await channel.connect()
-        else:
+            await ctx.send('Joined voice channel.')
+        elif voice_client.channel != channel:
             # noinspection PyUnresolvedReferences
             await voice_client.move_to(channel)
-
-        if ctx.invoked_with != 'play_next':
             await ctx.send('Joined voice channel.')
 
     @join.error
