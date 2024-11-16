@@ -59,6 +59,7 @@ class Voice_and_sound(commands.Cog):
             await ctx.invoke(ctx.bot.get_command('play'), search=ctx.current_argument)
         else:
             ctx.invoked_with = 'play_next'
+            # await ctx.invoke(ctx.bot.get_command('cantina'), search=ctx.current_argument)
             # Invoke next song, when implemented
             pass
 

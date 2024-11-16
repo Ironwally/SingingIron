@@ -48,7 +48,7 @@ def start():
 
     # Logging
     logger = logging.getLogger('discord')
-    logger.setLevel(logging.INFO)
+    logger.setLevel(logging.DEBUG)
     handler = logging.FileHandler(filename='logs/logging.log', encoding='utf-8', mode='w')
     handlerNewer2 = logging.handlers.RotatingFileHandler(
         filename='logs/logging.log',
