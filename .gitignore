@@ -3,3 +3,7 @@
 .idea/*
 .idea/workspace.xml
 .logs/*
+logs
+cogs/__pycache__/
+song
+.venv
