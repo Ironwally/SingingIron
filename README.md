@@ -8,3 +8,14 @@ Working features right now include:
 - Music Queue
 - Spotify integration
 - Soundboard functionality
+
+# Run Bot
+- Setup dev environment (below)
+- run venv
+- in venv: `python startBot.py`
+
+# Dev Setup
+- Clone project
+- Create new python venv: `python -m venv /path/to/new/virtual/environment`/`python3 -m venv /path/to/new/virtual/environment`
+- Start venv: Linux: `source path/to/venv/bin/activate`
+- In venv: Install requirements from requirements.txt: `pip install -r /path/to/requirements.txt`
