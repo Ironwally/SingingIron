@@ -4,6 +4,7 @@
 .idea/workspace.xml
 .logs/*
 logs
+__pycache__/
 cogs/__pycache__/
 song
 .venv
