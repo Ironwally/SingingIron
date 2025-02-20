@@ -13,9 +13,11 @@ Working features right now include:
 - Setup dev environment (below)
 - run venv
 - in venv: `python startBot.py`
+- enter api key if not created .env 
 
 # Dev Setup
 - Clone project
 - Create new python venv: `python -m venv /path/to/new/virtual/environment` or `python3 -m venv /path/to/new/virtual/environment`
 - Start venv: Linux: `source path/to/venv/bin/activate`
 - In venv: Install requirements from requirements.txt: `pip install -r /path/to/requirements.txt`
+- If you want to you can create an .env file with your discord api token. It will be found and inserted at runtime automatically
