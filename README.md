@@ -20,4 +20,4 @@ Working features right now include:
 - Create new python venv: `python -m venv /path/to/new/virtual/environment` or `python3 -m venv /path/to/new/virtual/environment`
 - Start venv: Linux: `source path/to/venv/bin/activate`
 - In venv: Install requirements from requirements.txt: `pip install -r /path/to/requirements.txt`
-- If you want to you can create an .env file with your discord api token. It will be found and inserted at runtime automatically
+- If you want to you can create an .env file with your discord api token (`DISCORD_API_TOKEN=YourApiToken`). It will be found and inserted at runtime automatically
