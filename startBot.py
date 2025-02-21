@@ -63,7 +63,7 @@ def start():
 
     discord_secret = settings.DISCORD_API_SECRET
     if discord_secret is None:
-        print('enter discord_api_secret: ')
+        print('Enter discord_api_secret: ')
         discord_secret = input()
     bot.run(discord_secret, log_handler=None)
 
