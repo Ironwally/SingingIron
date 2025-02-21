@@ -124,7 +124,7 @@ class Voice_and_sound(commands.Cog):
                 info = ydl.extract_info("ytsearch: " + search, download=False)
                 video = info['entries'][0]
 
-            await ctx.send(f'Playing {video['title']} by {video['channel']}!')
+            await ctx.send(f"Playing {video['title']} by {video['channel']}!")
 
             # Play sound from url using ffmpeg
             best_format = format_selector(video)

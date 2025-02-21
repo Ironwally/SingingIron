@@ -46,7 +46,7 @@ class Post_processing(commands.Cog):
     @cogs.command(description='List loaded cogs')
     async def list(self, ctx: commands.Context):
         extensions = (str(ex) for ex in self.bot.cogs.keys())
-        await ctx.send(f"Loaded extensions:\t{", \t".join(extensions)}")
+        await ctx.send(f"Loaded extensions:\t{', \t'.join(extensions)}")
 
     @cogs.command(description='load new extensions')
     async def load(self, ctx: commands.Context, cog: str = None):
