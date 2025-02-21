@@ -10,10 +10,15 @@ Working features right now include:
 - Soundboard functionality
 
 # Run Bot
+- install dependencies (below)
 - Setup dev environment (below)
 - run venv
 - in venv: `python startBot.py`
-- enter api key if not created .env 
+- enter api key if not created .env
+
+# Dependencies
+- ffmpeg -> converting audio
+
 
 # Dev Setup
 - Clone project
