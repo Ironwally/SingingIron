@@ -3,9 +3,9 @@
 .idea/*
 .idea/workspace.xml
 .logs/*
-logs/
+bot/discordBot/logs/
 __pycache__/
-cogs/__pycache__/
+bot/discordBot/cogs/__pycache__/
 assets/
 song/
 .venv/

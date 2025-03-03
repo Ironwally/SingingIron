@@ -8,12 +8,15 @@ from discord import app_commands
 import validators
 import asyncio
 
+from bot.data.local.tinydb_interface import TinyDBInterface
+
 
 class Voice_and_sound(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.loop = False
         self.loop_url = None
+        self.db = None
 
     @commands.hybrid_command(description='join channel')
     async def join(self, ctx: commands.Context):
@@ -24,6 +27,7 @@ class Voice_and_sound(commands.Cog):
 
         channel = ctx.author.voice.channel
         # Get or create voice client for guild
+        self.db = TinyDBInterface(f'{ctx.guild}.json', table_name='songs')
         voice_client = discord.utils.get(ctx.bot.voice_clients, guild=ctx.guild)
         if voice_client is None:
             await channel.connect()
@@ -51,6 +55,7 @@ class Voice_and_sound(commands.Cog):
         else:
             await ctx.send('Not connected to voice channel.')
 
+    @commands.hybrid_command(description='play next song in queue', aliases=['skip'])
     async def play_next(self, ctx: commands.Context):
         """Get next song and invoke it"""
         print('play next invoked')
@@ -59,8 +64,7 @@ class Voice_and_sound(commands.Cog):
             await ctx.invoke(ctx.bot.get_command('play'), search=ctx.current_argument)
         else:
             ctx.invoked_with = 'play_next'
-            # Invoke next song, when implemented
-            pass
+            await ctx.invoke(ctx.bot.get_command('play'), search=self.db.get_next_element())
 
     @commands.hybrid_command(description='give me music')
     async def play(self, ctx: commands.Context, *, search):
@@ -194,6 +198,13 @@ class Voice_and_sound(commands.Cog):
             await ctx.send('Looping current song.')
         # Looping implemented via play_next function bool
         # Implement via looping in current song in database?
+
+    async def skip(self, ctx: commands.Context):
+        """Skip to next song in playlist"""
+        if self.db.next:
+            await self.play_next()
+        else:
+            print('skip not implemented')
 
 
 async def setup(bot):

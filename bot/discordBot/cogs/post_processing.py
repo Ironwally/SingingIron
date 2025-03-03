@@ -8,7 +8,7 @@ class Post_processing(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    #cogs = app_commands.Group(name="cogs", description="Commands for loading, reloading and unloading cogs")
+    # cogs = app_commands.Group(name="cogs", description="Commands for loading, reloading and unloading cogs")
 
     @commands.group()
     async def cogs(self, ctx: commands.Context):

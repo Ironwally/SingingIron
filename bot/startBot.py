@@ -3,32 +3,8 @@ import settings
 import discord
 import logging
 import logging.handlers
-import os
-from discord.ext import commands
 
-
-class IronBot(commands.Bot):
-    def __init__(self, prefix, intents):
-        super().__init__(command_prefix=f'{prefix}', intents=intents)
-        # Bot Class automatically has commandTree
-
-    async def setup_hook(self) -> None:
-        # Load extensions, do more stuff ...
-        print(f'=== Attempting to load extensions from cogs directory for bot: {self}...')
-        await load_extensions(self)
-
-
-async def load_extensions(bot):
-    """Load extensions from cogs directory"""
-    for filename in os.listdir('./cogs'):
-        if filename.endswith('.py'):
-            extension = filename[:-3]
-            try:
-                await bot.load_extension(f'cogs.{extension}')
-                print(f'\tSuccessfully loaded: {extension}')
-            except Exception as ex:
-                exc = f'{type(ex).__name__}: {ex}'
-                print(f'\tFailed to load: {extension}\n\t\t{exc}')
+from bot.discordBot.DiscordBot import DiscordBot
 
 
 def start():
@@ -37,7 +13,7 @@ def start():
     intents = discord.Intents.default()
     intents.message_content = True
     intents.voice_states = True
-    bot = IronBot("!", intents)
+    bot = DiscordBot("!", intents)
 
     print('=== Starting bot ...')
 
@@ -49,9 +25,10 @@ def start():
     # Logging
     logger = logging.getLogger('discord')
     logger.setLevel(logging.INFO)
-    handler = logging.FileHandler(filename='logs/logging.log', encoding='utf-8', mode='w')
+    filename = 'discordBot/logs/logging.log'
+    handler = logging.FileHandler(filename=filename, encoding='utf-8', mode='w')
     handlerNewer2 = logging.handlers.RotatingFileHandler(
-        filename='logs/logging.log',
+        filename=filename,
         encoding='utf-8',
         maxBytes=32 * 1024 * 1024,  # 32 MiB
         backupCount=5,   # Rotate through 5 files
