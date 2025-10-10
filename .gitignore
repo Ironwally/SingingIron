@@ -10,3 +10,6 @@ bot/discordBot/cogs/__pycache__/
 
 assets/
 song/
+
+# Ignoring jsons created for servers. Might ignore other files too 
+*.json
