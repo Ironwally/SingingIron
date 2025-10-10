@@ -23,12 +23,14 @@ def start():
         logger.info(f"Bot logged in as {bot.user} (ID: {bot.user.id})")
 
     # Logging
+    logfile = 'discordBot/logs/logging.log'
+    if not os.path.exists(logfile):
+        with open(logfile, 'w'): pass
     logger = logging.getLogger('discord')
     logger.setLevel(logging.INFO)
-    filename = 'discordBot/logs/logging.log'
-    handler = logging.FileHandler(filename=filename, encoding='utf-8', mode='w')
+    handler = logging.FileHandler(filename=logfile, encoding='utf-8', mode='w')
     handlerNewer2 = logging.handlers.RotatingFileHandler(
-        filename=filename,
+        filename=logfile,
         encoding='utf-8',
         maxBytes=32 * 1024 * 1024,  # 32 MiB
         backupCount=5,   # Rotate through 5 files
@@ -37,7 +39,8 @@ def start():
     formatter = logging.Formatter('[{asctime}] [{levelname:<8}] {name}: {message}', dt_fmt, style='{')
     handler.setFormatter(formatter)
     logger.addHandler(handler)
-
+    
+    # Discord API
     discord_secret = settings.DISCORD_API_SECRET
     if discord_secret is None:
         print('Enter discord_api_secret: ')
