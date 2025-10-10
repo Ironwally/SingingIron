@@ -1,10 +1,11 @@
 # Imports
-import settings
 import discord
 import logging
 import logging.handlers
+from pathlib import Path
 
-from bot.discordBot.DiscordBot import DiscordBot
+from . import settings  # relative import so module resolves when run as package
+from .discordBot.DiscordBot import DiscordBot
 
 
 def start():
@@ -23,14 +24,14 @@ def start():
         logger.info(f"Bot logged in as {bot.user} (ID: {bot.user.id})")
 
     # Logging
-    logfile = 'discordBot/logs/logging.log'
-    if not os.path.exists(logfile):
-        with open(logfile, 'w'): pass
+    logfile_path = Path(__file__).parent / 'discordBot' / 'logs' / 'logging.log'
+    logfile_path.parent.mkdir(parents=True, exist_ok=True)
+    if not logfile_path.exists():
+        logfile_path.touch()
     logger = logging.getLogger('discord')
     logger.setLevel(logging.INFO)
-    handler = logging.FileHandler(filename=logfile, encoding='utf-8', mode='w')
-    handlerNewer2 = logging.handlers.RotatingFileHandler(
-        filename=logfile,
+    handler = logging.handlers.RotatingFileHandler(
+        filename=str(logfile_path),
         encoding='utf-8',
         maxBytes=32 * 1024 * 1024,  # 32 MiB
         backupCount=5,   # Rotate through 5 files
@@ -41,10 +42,9 @@ def start():
     logger.addHandler(handler)
     
     # Discord API
-    discord_secret = settings.DISCORD_API_SECRET
+    discord_secret = getattr(settings, 'DISCORD_API_SECRET', None)
     if discord_secret is None:
-        print('Enter discord_api_secret: ')
-        discord_secret = input()
+        discord_secret = input('Enter discord_api_secret: ').strip()
     bot.run(discord_secret, log_handler=None)
 
     # Use for more freedom in async loop ... (more async funcs to run...)
