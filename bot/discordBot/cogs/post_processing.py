@@ -1,4 +1,4 @@
-import discord
+from pathlib import Path
 from discord.ext import commands
 from discord import app_commands
 import os
@@ -7,8 +7,9 @@ import os
 class Post_processing(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        self.base_package = (__package__ or Path(__file__).parent.name) + '.cogs'
 
-    # cogs = app_commands.Group(name="cogs", description="Commands for loading, reloading and unloading cogs")
+    cogs = app_commands.Group(name="cogs", description="Commands for loading, reloading and unloading cogs")
 
     @commands.group()
     async def cogs(self, ctx: commands.Context):
@@ -22,19 +23,19 @@ class Post_processing(commands.Cog):
         #    "Error. This Cog does not exist or is not loaded.")
         if cog is None:
             # just reloads all cogs
-            for filename in os.listdir('./cogs'):
+            for filename in os.listdir(Path(__file__).parent / 'cogs'):
                 if filename.endswith('.py'):
                     extension = filename[:-3]
                     try:
-                        await ctx.bot.reload_extension(f'cogs.{extension}')
-                        await ctx.send(f'\tSuccessfully reloaded: {extension}')
+                        await self.bot.reload_extension(f'{self.base_package}.{extension}')
+                        print(f'\tSuccessfully reloaded: {extension}')
                     except Exception as ex:
                         exc = f'{type(ex).__name__}: {ex}'
-                        await ctx.send(f'\tError reloading extension: {extension}')
+                        print(f'\tFailed to reload: {extension}\n\t\t{exc}')
             return
         cog = cog.lower()
         try:
-            await self.bot.reload_extension(f'cogs.{cog}')
+            await self.bot.reload_extension(f'{self.base_package}.{cog}')
             await ctx.send(f"Reloaded cog: {cog}")
         except commands.ExtensionNotFound:
             await ctx.send(f"Cog: {cog} not found")
@@ -46,17 +47,27 @@ class Post_processing(commands.Cog):
     @cogs.command(description='List loaded cogs')
     async def list(self, ctx: commands.Context):
         extensions = (str(ex) for ex in self.bot.cogs.keys())
-        await ctx.send(f"Loaded extensions:\t', '{chr(9).join(extensions)}")
+        await ctx.send(f"Loaded extensions:\t{chr(9).join(extensions)}")
 
     @cogs.command(description='load new extensions')
     async def load(self, ctx: commands.Context, cog: str = None):
         if cog:
-            # load specified extensions
-            pass
+            try:
+                await self.bot.load_extension(f'{self.base_package}.{cog}')
+                await ctx.send(f'\tSuccessfully reloaded: {cog}')
+            except Exception as ex:
+                exc = f'{type(ex).__name__}: {ex}'
+                await ctx.send(f'\tFailed to reload: {cog}\n\t\t{exc}')
         else:
-            # load all new extensions
-            pass
-        await ctx.send("extension post-loading not implemented jet.")
+            for filename in os.listdir(Path(__file__).parent / 'cogs'):
+                if filename.endswith('.py') and filename[:-3] not in (str(ex) for ex in self.bot.cogs.keys()):
+                    extension = filename[:-3]
+                    try:
+                        await self.bot.load_extension(f'{self.base_package}.{extension}')
+                        await ctx.send(f'\tSuccessfully loaded: {extension}')
+                    except Exception as ex:
+                        exc = f'{type(ex).__name__}: {ex}'
+                        await ctx.send(f'\tFailed to load: {extension}\n\t\t{exc}')
 
 
 async def setup(bot):

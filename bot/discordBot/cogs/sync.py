@@ -2,7 +2,6 @@ from typing import Optional, Literal
 
 import discord
 from discord.ext import commands
-from discord import app_commands
 
 
 class Sync_cog(commands.Cog):

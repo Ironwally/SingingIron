@@ -4,7 +4,6 @@ from typing import Optional, Literal
 import discord
 from yt_dlp import YoutubeDL
 from discord.ext import commands
-from discord import app_commands
 import validators
 import asyncio
 

@@ -1,4 +1,3 @@
-from typing import Optional, Literal
 
 import discord
 from discord.ext import commands

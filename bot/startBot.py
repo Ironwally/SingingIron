@@ -5,7 +5,7 @@ import logging.handlers
 from pathlib import Path
 
 from . import settings  # relative import so module resolves when run as package
-from .discordBot.DiscordBot import DiscordBot
+from bot.discordBot.DiscordBot import DiscordBot
 
 
 def start():
