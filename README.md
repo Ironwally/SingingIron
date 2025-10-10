@@ -17,7 +17,7 @@ Working features right now include:
 - enter api key if not created .env
 
 # Dependencies
-- ffmpeg -> converting audio
+- [ffmpeg](https://ffmpeg.org/download.html) -> converting audio
 
 
 # Dev Setup
