@@ -1,5 +1,6 @@
 # Imports
 import os
+from pathlib import Path
 from discord.ext import commands
 
 
@@ -16,11 +17,12 @@ class DiscordBot(commands.Bot):
 
 async def load_extensions(bot):
     """Load extensions from cogs directory"""
-    for filename in os.listdir('../cogs'):
+    base_package = (__package__ or Path(__file__).parent.name) + '.cogs'
+    for filename in os.listdir(Path(__file__).parent / 'cogs'):
         if filename.endswith('.py'):
             extension = filename[:-3]
             try:
-                await bot.load_extension(f'cogs.{extension}')
+                await bot.load_extension(f'{base_package}.{extension}')
                 print(f'\tSuccessfully loaded: {extension}')
             except Exception as ex:
                 exc = f'{type(ex).__name__}: {ex}'
