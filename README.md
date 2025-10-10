@@ -13,7 +13,7 @@ Working features right now include:
 - install dependencies (below)
 - Setup dev environment (below)
 - run venv
-- in venv: `python startBot.py`
+- in venv: `python -m bot.startBot`
 - enter api key if not created .env
 
 # Dependencies
